@@ -13,7 +13,7 @@ var tabbedTOC_defaults = {
 	showSummaries: false, // true to show the posts summaries
 	numChars: 200, // Number of summary chars
 	showThumbnails: false, // true to show the posts thumbnails (Not recommended)
-	thumbSize: 400, // Thumbnail size
+	thumbSize: 40, // Thumbnail size
 	noThumb: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC", // No thumbnail URL
 	monthNames: [ // Array of month names
 		"Januari",
@@ -97,7 +97,7 @@ function showTabs(json) {
 				month = c.monthNames, // Month array from the configuration
 				title = entries.title.$t, // Get the post title
 				summary = ("summary" in entries && c.showSummaries === true) ? entries.summary.$t.replace(/<br ?\/?>/g," ").replace(/<.*?>/g,"").replace(/[<>]/g,"").substring(0,c.numChars) + '&hellip;' : '', // Get the post summary
-				img = ("media$thumbnail" in entries && c.showThumbnails === true) ? '<img class="thumbnail" style="width:'+c.thumbSize+'px;height:'+c.thumbSize+'px;" alt="" src="' + entries.media$thumbnail.url.replace(/\/s72(\-c)?\//,"/s"+c.thumbSize+"-c/") + '"/>' : '<img class="thumbnail" style="width:'+c.thumbSize+'px;height:'+c.thumbSize+'px;" alt="" src="' + c.noThumb.replace(/\/s72(\-c)?\//,"/s"+c.thumbSize+"-c/") + '"/>', // Get the post thumbnail
+				img = ("media$thumbnail" in entries && c.showThumbnails === true) ? '<img class="thumbnail" style="width:'+c.thumbSize+'px;height:'+c.thumbSize+'px;" alt="" src="' + entries.media$thumbnail.url.replace(/\/s150(\-c)?\//,"/s"+c.thumbSize+"-c/") + '"/>' : '<img class="thumbnail" style="width:'+c.thumbSize+'px;height:'+c.thumbSize+'px;" alt="" src="' + c.noThumb.replace(/\/s72(\-c)?\//,"/s"+c.thumbSize+"-c/") + '"/>', // Get the post thumbnail
 				cat = (entries.category) ? entries.category : [], // Post categories
 				date = (c.showDates) ? '<time datetime="' + pub + '" title="' + pub + '">' + pub.substring(8,10) + ' ' + month[parseInt(pub.substring(5,7),10)-1] + ' ' + pub.substring(0,4) + '</time>' : ''; // Formated published date
 				
