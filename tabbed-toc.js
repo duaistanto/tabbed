@@ -13,7 +13,7 @@ var tabbedTOC_defaults = {
 	showSummaries: false, // true to show the posts summaries
 	numChars: 200, // Number of summary chars
 	showThumbnails: false, // true to show the posts thumbnails (Not recommended)
-	thumbSize: 40, // Thumbnail size
+	thumbSize: 400, // Thumbnail size
 	noThumb: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC", // No thumbnail URL
 	monthNames: [ // Array of month names
 		"Januari",
